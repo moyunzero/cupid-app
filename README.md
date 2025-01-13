@@ -1,33 +1,44 @@
 # Cupid App
 
-Cupid App 是一款全栈约会应用，采用最新的技术栈构建，旨在为用户提供流畅且个性化的约会体验。以下是该应用的主要特点和技术栈：
+Cupid App 是一款全栈约会应用，采用最新的技术栈构建，旨在为用户提供流畅且个性化的约会体验。
 
 ## 技术栈
 
-- 前端框架：Next.js 14，利用其高效的服务器端渲染和静态生成能力，提升页面加载速度和 SEO 性能
-- UI 框架：NextUI v2 + TailwindCSS，提供现代化的 UI 组件和灵活的样式定制能力
-- 动画效果：Framer Motion，实现流畅的页面过渡和交互动画
-- 数据库：Prisma 作为 ORM 工具，简化数据库操作，支持多种数据库，本项目使用 PostgreSQL 作为后端数据库
-- 认证：NextAuth (Auth.js)，提供安全、灵活的用户认证解决方案，支持多种登录方式
-- 实时通信：Pusher，用于实现应用中的实时功能，如聊天消息推送、在线状态更新等
-- 云存储：Cloudinary，用于存储和管理用户上传的图片、视频等媒体文件，支持丰富的图像处理功能
-- 部署平台：Vercel，提供快速、可靠的云托管服务，支持自动部署和持续集成
-- 表单处理：React Hook Form，简化表单的创建和管理，提高表单的响应速度和易用性
-- 数据验证：Zod Validation，用于对用户输入的数据进行严格验证，确保数据的准确性和安全性
-- 状态管理：Zustand，轻量级的状态管理库，方便在应用中进行状态的共享和管理
-- 编程语言：TypeScript，为项目提供类型检查和代码提示，增强代码的可维护性和可读性
+### 核心框架
+- **前端框架**: Next.js 14 (App Router)
+- **UI 框架**: NextUI v2 + TailwindCSS
+- **状态管理**: Zustand
+- **表单处理**: React Hook Form + Zod Validation
+
+### 开发工具
+- **开发语言**: TypeScript
+- **代码规范**: ESLint + Prettier
+- **构建工具**: Turbopack (开发环境)
+
+### 性能优化
+- **图片优化**: Next.js Image 组件
+- **字体优化**: Next.js Font System
+- **动画效果**: Framer Motion
 
 ## 项目结构
 
 ```
 src/
-├── app/                    # Next.js 应用主目录
-│   ├── page.tsx           # 首页组件
-│   ├── layout.tsx         # 全局布局组件
-│   └── globals.css        # 全局样式文件
-├── components/            # 可复用组件目录
-├── lib/                   # 工具函数和配置文件
-└── types/                 # TypeScript 类型定义
+├── app/                    # Next.js App Router 目录
+│   ├── (auth)/            # 认证相关页面
+│   │   ├── login/         # 登录页面
+│   │   └── register/      # 注册页面
+│   ├── messages/          # 消息页面
+│   ├── lists/            # 列表页面
+│   ├── page.tsx          # 首页
+│   └── layout.tsx        # 根布局
+├── components/           # 可复用组件
+│   ├── navbar/          # 导航组件
+│   │   ├── NavLink.tsx  # 导航链接
+│   │   └── TopNav.tsx   # 顶部导航栏
+│   └── Providers.tsx    # 全局提供者
+├── lib/                 # 工具函数和配置
+└── types/              # TypeScript 类型定义
 ```
 
 ## 开发指南
@@ -77,10 +88,10 @@ yarn start   # 启动生产环境服务器
 
 ## 性能优化
 
-- 图片优化：使用 Next.js 内置的图片组件进行自动优化
-- 代码分割：页面级别的自动代码分割
-- 静态生成：适当使用静态生成提升加载速度
-- 缓存策略：实现合理的数据缓存机制
+- **图片优化**：使用 Next.js 内置的图片组件进行自动优化
+- **代码分割**：页面级别的自动代码分割
+- **静态生成**：适当使用静态生成提升加载速度
+- **缓存策略**：实现合理的数据缓存机制
 
 ## 贡献指南
 
