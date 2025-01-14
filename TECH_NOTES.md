@@ -178,3 +178,13 @@ rounded-xl shadow-lg  /* 圆角和阴影 */
    - 表单输入验证
    - API 请求参数验证
    - 错误处理机制 
+
+## 认证系统实现说明
+
+### 技术栈
+- Next.js 14 (App Router)
+- React Hook Form - 表单管理
+- Zod - 表单验证
+- NextUI - UI组件库
+
+### 目录结构 

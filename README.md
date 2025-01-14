@@ -2,7 +2,23 @@
 
 Cupid App 是一款全栈约会应用，采用最新的技术栈构建，旨在为用户提供流畅且个性化的约会体验。
 
-## 技术栈
+## 功能特性
+
+### 认证系统
+- **登录功能** (`/login`)
+  - 邮箱密码登录
+  - 表单验证：
+    - 邮箱：必须是有效的邮箱格式
+    - 密码：最少6个字符
+
+- **注册功能** (`/register`)
+  - 新用户账号创建
+  - 表单验证：
+    - 用户名：最少3个字符
+    - 邮箱：必须是有效的邮箱格式
+    - 密码：最少6个字符
+
+## 技术架构
 
 ### 核心框架
 - **前端框架**: Next.js 14 (App Router)
@@ -27,7 +43,11 @@ src/
 ├── app/                    # Next.js App Router 目录
 │   ├── (auth)/            # 认证相关页面
 │   │   ├── login/         # 登录页面
+│   │   │   ├── page.tsx   # 登录页面组件
+│   │   │   └── LoginForm.tsx  # 登录表单组件
 │   │   └── register/      # 注册页面
+│   │       ├── page.tsx   # 注册页面组件
+│   │       └── RegisterForm.tsx # 注册表单组件
 │   ├── messages/          # 消息页面
 │   ├── lists/            # 列表页面
 │   ├── page.tsx          # 首页
@@ -38,19 +58,20 @@ src/
 │   │   └── TopNav.tsx   # 顶部导航栏
 │   └── Providers.tsx    # 全局提供者
 ├── lib/                 # 工具函数和配置
+│   └── schemas/         # 表单验证模式
+│       ├── LoginSchema.ts   # 登录表单验证
+│       └── RegisterSchema.ts # 注册表单验证
 └── types/              # TypeScript 类型定义
 ```
 
 ## 开发指南
 
 ### 环境要求
-
 - Node.js >= 18.0.0
 - yarn 或 npm
 - PostgreSQL 数据库实例
 
 ### 本地开发
-
 1. 克隆项目并安装依赖：
 ```bash
 git clone <repository-url>
@@ -72,22 +93,21 @@ yarn dev
 4. 打开浏览器访问 http://localhost:3000
 
 ### 构建部署
-
 ```bash
 yarn build   # 构建生产环境代码
 yarn start   # 启动生产环境服务器
 ```
 
-## 代码规范
+## 开发规范
 
+### 代码规范
 - 使用 ESLint 进行代码检查
 - 使用 Prettier 进行代码格式化
 - 遵循 TypeScript 严格模式
 - 组件采用函数式编程范式
 - 使用 TailwindCSS 进行样式管理
 
-## 性能优化
-
+### 性能优化
 - **图片优化**：使用 Next.js 内置的图片组件进行自动优化
 - **代码分割**：页面级别的自动代码分割
 - **静态生成**：适当使用静态生成提升加载速度
