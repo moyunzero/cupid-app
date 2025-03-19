@@ -30,7 +30,7 @@ export default function LoginForm() {
   };
 
   return (
-    <Card className="w-2/5 mx-auto">
+    <Card className="w-3/5 max-w-md mx-auto mt-[100px]">
       {/* 卡片头部：展示登录标题和欢迎信息 */}
       <CardHeader className="flex flex-col items-center justify-center">
         <div className="flex flex-col gap-2 items-center text-default">

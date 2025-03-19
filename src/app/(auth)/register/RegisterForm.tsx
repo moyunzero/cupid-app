@@ -39,10 +39,10 @@ export default function RegisterForm() {
     };
 
     return (
-       <Card className="w-full max-w-md mx-auto">
+       <Card className="w-3/5 max-w-md mx-auto mt-[100px]">
         {/* 卡片头部：注册标题 */}
         <CardHeader className="flex flex-col items-center justify-center">
-            <h1>Register</h1>
+            <h1>注册</h1>
         </CardHeader>
         {/* 卡片主体：注册表单 */}
         <CardBody>
@@ -50,36 +50,36 @@ export default function RegisterForm() {
                 <div className="space-y-4">
                     {/* 用户名输入框 */}
                     <Input 
-                    label="Name"
-                    variant="bordered"
-                    {...register("name")} // 注册用户名字段
-                    isInvalid={!!errors.name} // 显示验证错误状态
-                    errorMessage={errors.name?.message as string} // 显示错误信息
+                        label="Name"
+                        variant="bordered"
+                        {...register("name")} // 注册用户名字段
+                        isInvalid={!!errors.name} // 显示验证错误状态
+                        errorMessage={errors.name?.message as string} // 显示错误信息
                     />
                     {/* 邮箱输入框 */}
                     <Input 
-                    label="Email"
-                    variant="bordered"
-                    {...register("email")} // 注册邮箱字段
-                    isInvalid={!!errors.email} // 显示验证错误状态
-                    errorMessage={errors.email?.message as string} // 显示错误信息
+                        label="Email"
+                        variant="bordered"
+                        {...register("email")} // 注册邮箱字段
+                        isInvalid={!!errors.email} // 显示验证错误状态
+                        errorMessage={errors.email?.message as string} // 显示错误信息
                     />
                     {/* 密码输入框 */}
                     <Input 
-                    label="Password"
-                    variant="bordered"
-                    type="password"
-                    {...register("password")} // 注册密码字段
-                    isInvalid={!!errors.password} // 显示验证错误状态
-                    errorMessage={errors.password?.message as string} // 显示错误信息
+                        label="Password"
+                        variant="bordered"
+                        type="password"
+                        {...register("password")} // 注册密码字段
+                        isInvalid={!!errors.password} // 显示验证错误状态
+                        errorMessage={errors.password?.message as string} // 显示错误信息
                     />
                     {/* 注册按钮 */}
                     <Button
-                    isLoading={isSubmitting} // 提交时显示加载状态
-                    isDisabled={!isValid} // 表单无效时禁用按钮
-                    type="submit"
-                    fullWidth
-                    color="default"
+                        isLoading={isSubmitting} // 提交时显示加载状态
+                        isDisabled={!isValid} // 表单无效时禁用按钮
+                        type="submit"
+                        fullWidth
+                        color="default"
                     >
                         Register
                     </Button>
